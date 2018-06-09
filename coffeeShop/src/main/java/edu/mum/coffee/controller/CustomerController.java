@@ -3,12 +3,16 @@ package edu.mum.coffee.controller;
 import java.security.Principal;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
 
 import edu.mum.coffee.domain.Person;
 import edu.mum.coffee.domain.Product;
@@ -93,12 +97,12 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/user/profile/update")
-	public String UpdatePersonProfile(Person person, @ModelAttribute("userData") Person user){
+	public String UpdatePersonProfile(@ModelAttribute @Valid Person person, BindingResult result, Model model){
 		
-		person.setEmail(user.getEmail());
+		person.setEmail(person.getEmail());
 		person.setEnable(true);
 		
-		personService.removePerson(user);
+		//personService.removePerson(user);
 		personService.savePerson(person);		
 		return "successfulProfileUpdate";
 	}

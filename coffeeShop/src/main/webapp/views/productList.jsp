@@ -33,14 +33,13 @@
             <td>${product.productType}</td>
             <td>${product.price}</td>
             <td>${product.description}</td>               
-
+			<td><a href="/product/delete/${product.id}">Delete</a>
 		  </tr>
 		</c:forEach>
 		</table>
 		<br>
-		
-		<a href="<c:url value="/products/manage" />"> Back </a>
-		
+		<a href="<c:url value="/product/create" />">create Product</a><br>
+		<a href="<c:url value="/admin" />"> Back </a>
 		
 </body>
 </html>

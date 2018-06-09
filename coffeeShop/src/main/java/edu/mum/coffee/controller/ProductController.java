@@ -1,11 +1,14 @@
 package edu.mum.coffee.controller;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import edu.mum.coffee.domain.Product;
@@ -45,19 +48,16 @@ public class ProductController {
 	}
 
 
-	@GetMapping("/product/delete")
-	public String removeProduct(Model model) {
-
-		return "removeProduct";
-	}
+//	@GetMapping("/product/delete/{id}")
+//	public String removeProduct(@PathVariable int id,Model model) {
+//		System.out.println("============================"+ " " + id);
+//		return "removeProduct";
+//	}
 	
-	@PostMapping("/product/delete")
-	public String DeleteProduct(@ModelAttribute("id") int id,BindingResult result,Model model) {        
+	@GetMapping("/product/delete/{id}")
+	public String DeleteProduct(@PathVariable int id,Model model) {        
 		System.out.println("============================"+ " " + id);
 		Product product=productService.getProduct(id);
-		if(product==null) {
-			return "successfulRemove";
-		}
 		productService.delete(product);
 		return "successfulRemove";
 	}

@@ -18,7 +18,7 @@
 				<br> 
 		
 		
-		<form action="/user/profile/update" method="post">
+		<form:form action="/user/profile/update" method="POST" modelAttribute="person">
 		
 		
 		<p>First name: <input type="text" name="firstName" value="${userData.firstName}"></p>
@@ -30,7 +30,7 @@
 		<p>ZipCode: <input type="text" name="address.zipcode" value="${userData.address.zipcode}"></p>
 		<p> <input type="submit" value="Update Profile"></p>
 		
-		</form>
+		</form:form>
 
 		<a href="<c:url value="/user/profile" />"> Back </a>
 </body>
