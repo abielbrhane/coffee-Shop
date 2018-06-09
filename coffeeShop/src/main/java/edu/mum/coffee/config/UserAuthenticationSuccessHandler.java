@@ -28,6 +28,7 @@ public class UserAuthenticationSuccessHandler implements AuthenticationSuccessHa
 			if(authority.getAuthority().equals("ROLE_USER")) {
 				try {
 					redirectStrategy.sendRedirect(arg0, arg1, "/user");
+					System.out.println(arg0.getAttributeNames());
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -35,6 +36,7 @@ public class UserAuthenticationSuccessHandler implements AuthenticationSuccessHa
 			} else if(authority.getAuthority().equals("ROLE_ADMIN")) {
 				try {
 					redirectStrategy.sendRedirect(arg0, arg1, "/admin");
+					System.out.println(arg0.getAttributeNames());
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
