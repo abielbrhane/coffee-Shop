@@ -1,16 +1,21 @@
 package edu.mum.coffee.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import edu.mum.coffee.service.ProductService;
 
 @Controller
 public class HomeController {
 	
+	@Autowired
+	private ProductService productService;
 	
 	@GetMapping({"/", "/index", "/home"})
-	public String homePage() {
+	public String homePage(Model model) {
 		System.out.println("====================================5555555");
+		model.addAttribute("products", productService.getAllProduct());
 		return "home";
 	}
 
@@ -30,10 +35,6 @@ public class HomeController {
 		return "order";
 	}
 
-	@GetMapping({"/user"})
-	public String userPage() {
-		return "user";
-	}
 	
 	@GetMapping("/login")
 	public String login() {
@@ -44,5 +45,7 @@ public class HomeController {
 //	public String login() {
 //		return "thymeleaf/login";
 //	}
+	
+
 	
 }
