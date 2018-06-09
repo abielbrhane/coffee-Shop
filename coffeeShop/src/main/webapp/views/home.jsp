@@ -12,9 +12,11 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 </head>
 <body>
+	<div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"><span class="navbar-nav mr-auto"></span>
+	<div class="form-inline my-2 my-lg-0"><a class="btn btn-outline-success my-2 my-sm-0" href="<c:url value="/login" />"> Login </a></div>
+	</div>
+	<div class="jumbotron"><h2>List of products</h2></div>
 	
-		<a class="btn btn-primary btn-sm active" href="<c:url value="/login" />"> Login </a>
-	<h2>List of products</h2>
 	<table class="table table-striped">
 		<tr>
 			<td>Product Name</td>

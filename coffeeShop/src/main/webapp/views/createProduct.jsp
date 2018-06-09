@@ -16,31 +16,6 @@
 	<a href="<c:url value="/logout" />"> LogOut </a>
 	<br>
 
-	<!--<form th:action="@{/product/save}" th:object="${product}" method="POST">
-
-		Product Name: <br /> <input type="text" th:field="*{productName}"
-			class="form-control" /> <span th:errors="*{productName}"
-			class="text-danger"></span> <br /> Description <br />
-		<textArea th:field="*{description}" class="form-control"></textArea>
-		<span th:errors="*{description}" class="text-danger"></span> <br />
-		Price <br /> <input type="text" th:field="*{price}" class="form-control" /> <span
-			th:errors="*{price}" class="text-danger"></span><br /> Type <br />
-		<select th:field="*{productType}">
-			<option value="">BREAKFAST</option>
-			<option value="">DINNER</option>
-			<option value="">LUNCH</option>
-			<option th:each="proType : ${productTypes}" th:value="${proType}"
-				th:utext="${proType}" />
-		</select> <span th:errors="*{productType}" class="text-danger"></span><br /> <br />
-		<input type="submit" class="Create Product" />
-	</form>
-
-
-	<div th:if="${errorMessage}" th:utext="${errorMessage}"
-		style="color: red; font-style: italic;"></div> -->
-
-
-
 		<form:form action="/product/save" method="POST" modelAttribute="product">
 		
 		<p>Product Name: <input type="text" name="productName"></p>

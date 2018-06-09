@@ -13,7 +13,7 @@
 <title>Notification of success</title>
 </head>
 <body>
-<p><h1>${product.productName} is added successfully}</h1></p>
+<p><h1>${product.productName} is added successfully</h1></p>
 		
 		<a href="<c:url value="/products/manage" />"> End</a>
 

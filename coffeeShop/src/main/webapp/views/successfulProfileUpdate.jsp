@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,8 +8,12 @@
 <title>Profile updated successfully</title>
 </head>
 <body>	
-		<h1>${userData.email} profile is updated successfully..! }</h1>
+		<h1>${userData.email} profile is updated successfully</h1>
 		
-		<a href="<c:url value="/user/profile" />"> End</a>
+		<form:form action="/user/profile" method="GET" modelAttribute="product">
+		<input type="submit" name="submit" value="End"/>
+		
+		</form:form>
+		
 </body>
 </html>
