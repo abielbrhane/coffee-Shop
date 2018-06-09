@@ -9,13 +9,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 </head>
 <body>
-	
-		<a class="btn btn-primary btn-sm active" href="<c:url value="/login" />"> Login </a>
+	You can choose any presentation framework that could be integrated with
+	Spring
+
+
+	<p>
+		The only user is "<b>super</b>" and the password is "<b>pw</b>"
+	<p>
+		<a href="<c:url value="/login" />"> Login </a>
 	<h2>List of products</h2>
-	<table class="table table-striped">
+	<table>
 		<tr>
 			<td>Product Name</td>
 			<td>Product Type</td>

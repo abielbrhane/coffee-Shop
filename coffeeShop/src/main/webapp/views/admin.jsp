@@ -25,7 +25,7 @@
 	   	
 	<a href="<c:url value="/products/list" />">Manage Products</a> <br>
 	<a href="<c:url value="/customers/manage" />">Manage Customers</a><br>	
-	<a href="<c:url value="/orders/list" />">Manage orders </a> <br>
+	<a href="<c:url value="/orders/manage" />">Manage orders </a> <br>
 
 </body>
 </html>
