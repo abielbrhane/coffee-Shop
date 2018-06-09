@@ -20,14 +20,14 @@
 	<a href="<c:url value="/logout" />">logout </a>
 	
 	<div style="color:blue">
-	<p>First Name: ${userData.firstName}</p>
-	<p>Last Name: ${userData.lastName}</p>
-	<p>email: ${userData.email}</p>
-	<p>Phone: ${userData.phone}</p>
-	<p>City: ${userData.address.city}</p>
-	<p>Country: ${userData.address.country}</p>
-	<p>State: ${userData.address.state}</p>
-	<p>ZipCode: ${userData.address.zipcode}</p>
+	<p>First Name: ${person.firstName}</p>
+	<p>Last Name: ${person.lastName}</p>
+	<p>email: ${person.email}</p>
+	<p>Phone: ${person.phone}</p>
+	<p>City: ${person.address.city}</p>
+	<p>Country: ${person.address.country}</p>
+	<p>State: ${person.address.state}</p>
+	<p>ZipCode: ${person.address.zipcode}</p>
 	
 	</div>
 		
