@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
+
 import edu.mum.coffee.domain.Person;
 import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.service.PersonService;
@@ -62,10 +62,7 @@ public class CustomerController {
 //		return new Person();
 //	}
 	
-	@GetMapping({"/user"})
-	public String userPage() {
-		return "user";
-	}
+	
 	
 	@PostMapping("/user")
 	public String backToUser(){		
@@ -75,7 +72,6 @@ public class CustomerController {
 	@GetMapping("/user/profile")
 	public String profile(Principal principal, Model model) {
 		String userEmail=principal.getName();
-		System.out.println("============="+ userEmail);
 		List<Person> persons=personService.findByEmail(userEmail);
 		Person user=null;
 		for(Person person:persons){
@@ -112,7 +108,7 @@ public class CustomerController {
 	}
 	
 	@ModelAttribute("userData")
-	public Person userData(Principal principal,Model model){
+	public Person userData(Principal principal){
 		
 		String userEmail=principal.getName();
 		List<Person> persons=personService.findByEmail(userEmail);
@@ -123,10 +119,8 @@ public class CustomerController {
 		         break;
 			}
 		}
-		 model.addAttribute("person",user);
-			
-			
-			return user;
+		
+		return user;
 	}
 
 

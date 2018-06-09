@@ -20,7 +20,7 @@
 
 	<div align="center" style="margin-top: 15px">
 
-		<table class="table table-bordered" border="1">
+		<table border="1">
 			<tr>
 				<td colspan="10" align="center"><h2>List of Orders</h2></td>
 			</tr>
@@ -61,7 +61,7 @@
 	<br>
 
 
-	<a href="<c:url value="/admin" />"> Back </a>
+	<a href="<c:url value="/orders/manage" />"> Back </a>
 
 
 </body>
