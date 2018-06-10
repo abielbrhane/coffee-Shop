@@ -9,13 +9,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 </head>
 <body>
 
 
-<div align="center" style="margin-top:15px">
+<div class="container is-fluid" align="center" style="margin-top:15px">
 <h2>Order Summary</h2>
-        <table border="1">
+        <table class="table" border="1">
            
             <tr>
                 <td colspan="2" align="center">
@@ -38,9 +40,9 @@
         </table>
     </div>
     
-    <div align="center" style="margin-top:15px">
+    <div class="container is-fluid" align="center" style="margin-top:15px">
 
-  <table border="1">
+  <table class="table table-hover" border="1">
             <tr>
                 <td colspan="5" align="center"><h2>Order</h2></td>
             </tr>

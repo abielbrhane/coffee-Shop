@@ -78,6 +78,13 @@ public class OrderController {
 	}
 	
 	public void submitOrder(Order order){
+		System.out.println(order.getId());
+		System.out.println(order.getQuantity());
+		System.out.println(order.getTotalAmount());
+		System.out.println(order.getOrderDate().getTime());
+		System.out.println(order.getPerson().getId());
+
+		System.out.println("=================="+ order.getPerson().getFirstName());
 		orderService.save(order);		
 	}
 	

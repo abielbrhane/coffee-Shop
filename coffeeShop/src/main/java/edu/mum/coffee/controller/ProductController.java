@@ -45,12 +45,6 @@ public class ProductController {
 
 	}
 
-
-//	@GetMapping("/product/delete/{id}")
-//	public String removeProduct(@PathVariable int id,Model model) {
-//		System.out.println("============================"+ " " + id);
-//		return "removeProduct";
-//	}
 	
 	@GetMapping("/product/delete/{id}")
 	public String DeleteProduct(@PathVariable int id,Model model) {        

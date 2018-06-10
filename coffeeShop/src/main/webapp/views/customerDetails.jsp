@@ -12,7 +12,10 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
 </head>
 <body>
-	<div class="container">
+	<div class="container is-fluid" align="center" style="margin-top: 15px">
+		<h1>Personal Information</h1>
+	</div>
+	<div class="container is-fluid" align="center" style="margin-top: 15px">
 		<form:form class="needs-validation" modelAttribute="order"
 			action="${flowExecutionUrl}">
 

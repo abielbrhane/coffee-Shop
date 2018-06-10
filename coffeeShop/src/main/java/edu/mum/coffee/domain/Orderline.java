@@ -1,5 +1,8 @@
 package edu.mum.coffee.domain;
 
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,15 +12,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Orderline")
-public class Orderline {
+public class Orderline implements Serializable{
 
 	@Id
 	@GeneratedValue
 	private int id;
 	private int quantity;
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private Product product;
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Order order;
 
 	public int getQuantity() {

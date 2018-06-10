@@ -56,11 +56,6 @@ public class CustomerController {
 		return "customerData";
 	}
 	
-
-//	@ModelAttribute("customer")
-//	public Person getPerson(){
-//		return new Person();
-//	}
 	
 	@GetMapping({"/user"})
 	public String userPage() {

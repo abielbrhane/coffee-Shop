@@ -28,8 +28,12 @@ public class Order {
 
 	@OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Orderline> orderLines = new ArrayList<Orderline>();
-	@OneToOne
+	@OneToOne(cascade =CascadeType.ALL)
 	private Person person;
+
+	public void setOrderLines(List<Orderline> orderLines) {
+		this.orderLines = orderLines;
+	}
 
 	public int getId() {
 		return id;
