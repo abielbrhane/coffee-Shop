@@ -1,11 +1,23 @@
 package edu.mum.coffee.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+
+import edu.mum.coffee.domain.Address;
+import edu.mum.coffee.domain.Order;
+import edu.mum.coffee.domain.Orderline;
+import edu.mum.coffee.domain.Person;
+import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.service.OrderService;
+import edu.mum.coffee.service.ProductService;
 
 @Controller
 public class OrderController {
@@ -13,20 +25,71 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	@GetMapping("/orders/manage")
-	public String  orderManagement(){
+	@Autowired
+	private ProductService productService;
+	
+	public Order createOrder(){
+		Order order=new Order();
+		Person person=new Person();
+		Address address=new Address();
+		person.setAddress(address);
+
+     order.setPerson(person);
+     System.out.println(" lkdjfksjdf");
+		return order;
+	}
+	
+	public Orderline createOrderLine(Order order){
 		
-		return "orderManagement";
+		Product product=new Product();
+		order.setOrderDate(new Date());
+	Order ord=new Order();
+	ord.setOrderDate(new Date());
+		Orderline orderLine=new Orderline();
+		orderLine.setProduct(product);
+		orderLine.setOrder(ord);
+		return orderLine;
+	}
+	
+	public List<String> productListByName(){
+		List<String> productNames=new ArrayList<String>();
+		List<Product> products=productService.getAllProduct();
+		for(Product product: products){
+			productNames.add(product.getProductName());		}
+		return productNames;
+	}
+	            
+	public void addOrderLine(Order order,Orderline orderLine){
+		List<Product> orderLineProducts=productService.findByProductType(orderLine.getProduct().getProductType());
+	
+		   for(Product product:orderLineProducts){
+			   if(product.getProductName().equals(orderLine.getProduct().getProductName())){
+				   orderLine.getProduct().setPrice(product.getPrice());	
+				   break;
+			   }
+		     }
+		   
+		order.addOrderLine(orderLine);
+		
+	}
+	
+	public void clearOrdeLines(Order order){
+		order.clearOrderLines();
+	}
+	
+	public void submitOrder(Order order){
+		orderService.save(order);		
 	}
 	
 	
-	@GetMapping("/orders/list")
-	public String  ordersList(Model model){
-		model.addAttribute("orders",orderService.findAll());
-		
-		return "orderList";
+	@InitBinder
+	public void initBuild(WebDataBinder binder){
+		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
+		binder.registerCustomEditor(Date.class, "orderDate", new CustomDateEditor(dateFormat, true));
+			
 	}
 
+	
 
 
 	

@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import edu.mum.coffee.service.OrderService;
 import edu.mum.coffee.service.ProductService;
 
 @Controller
@@ -11,6 +13,9 @@ public class HomeController {
 	
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private OrderService orderService;
 	
 	@GetMapping({"/", "/index", "/home"})
 	public String homePage(Model model) {
@@ -41,10 +46,19 @@ public class HomeController {
 		return "login";
 	}
 	
-//	@GetMapping("/login")
-//	public String login() {
-//		return "thymeleaf/login";
-//	}
+	@GetMapping("/orders/manage")
+	public String  orderManagement(){
+		
+		return "orderManagement";
+	}
+	
+	
+	@GetMapping("/orders/list")
+	public String  ordersList(Model model){
+		model.addAttribute("orders",orderService.findAll());
+		
+		return "orderList";
+	}
 	
 
 	

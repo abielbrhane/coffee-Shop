@@ -76,17 +76,17 @@
 		<table width="30%" border="0" cellspacing="3" cellpadding="1">
 			<tr>
 				<td>
-					<button type="submit" id="previous" name="_eventId_previous">
+					<button class="btn btn-secondary" type="submit" id="previous" name="_eventId_previous">
 						<spring:message code="previous" />
 					</button>
 				</td>
 				<td>
-					<button type="submit" id="next" name="_eventId_next">
+					<button class="btn btn-success" type="submit" id="next" name="_eventId_next">
 						<spring:message code="next" />
 					</button>
 				</td>
 				<td>
-					<button type="submit" id="cancel" name="_eventId_cancel">
+					<button type="submit" class="btn btn-dark" id="cancel" name="_eventId_cancel">
 						<spring:message code="cancel" />
 					</button>
 				</td>

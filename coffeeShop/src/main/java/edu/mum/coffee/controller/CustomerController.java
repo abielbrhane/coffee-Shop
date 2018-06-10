@@ -108,7 +108,7 @@ public class CustomerController {
 		
 		//personService.removePerson(user);
 		personService.savePerson(person);		
-		return "successfulProfileUpdate";
+		return "profile";
 	}
 	
 	@ModelAttribute("userData")

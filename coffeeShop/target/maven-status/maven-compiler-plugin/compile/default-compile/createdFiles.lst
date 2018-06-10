@@ -14,11 +14,9 @@ edu\mum\coffee\repository\PersonRepository.class
 edu\mum\coffee\controller\HomeController.class
 edu\mum\coffee\controller\OrderController.class
 edu\mum\coffee\domain\Orderline.class
-edu\mum\client\User.class
-edu\mum\coffee\clientSide.class
 edu\mum\coffee\repository\ProductRepository.class
 edu\mum\coffee\config\UserAuthenticationSuccessHandler.class
-edu\mum\client\Address.class
+edu\mum\coffee\config\AppConfigWebMVC.class
 edu\mum\coffee\domain\Product.class
 edu\mum\coffee\service\PersonService.class
-edu\mum\client\ClientSide.class
+edu\mum\coffee\config\AppConfigWebFlow.class
