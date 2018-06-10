@@ -3,6 +3,7 @@ package edu.mum.coffee.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +18,7 @@ import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.service.OrderService;
 import edu.mum.coffee.service.PersonService;
 import edu.mum.coffee.service.ProductService;
-
+@Controller
 @RestController
 public class RESTController {
 	
@@ -62,7 +63,14 @@ public class RESTController {
   
   //get person by id from the path
   @GetMapping(path="/persons/{id}")
-  public Person getPersons(@PathVariable Long id){	  
+  public Person getPersons(@PathVariable Long id){	
+	  System.out.println("=========================="+ " "+ id);
+	  return personService.findById(id);
+      }
+  
+  @PostMapping(path="/persons/{id}")
+  public Person getPerson(@RequestBody Long id){	
+	  System.out.println("=========================="+ " "+ id);
 	  return personService.findById(id);
       }
 	

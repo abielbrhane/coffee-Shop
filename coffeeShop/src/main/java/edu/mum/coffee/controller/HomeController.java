@@ -23,6 +23,11 @@ public class HomeController {
 		model.addAttribute("products", productService.getAllProduct());
 		return "home";
 	}
+	
+	@GetMapping(value="/find")
+	public String viewAccount(Model model) {
+		return "findAccount";
+	}
 
 	@GetMapping({"/secure"})
 	public String securePage() {

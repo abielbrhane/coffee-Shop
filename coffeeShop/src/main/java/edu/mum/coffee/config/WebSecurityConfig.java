@@ -23,6 +23,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/products/**").permitAll()
                 .antMatchers("/persons/**").permitAll()
                 .antMatchers("/orders/**").permitAll()
+                .antMatchers("/find/**").permitAll()
                 .antMatchers("/user").hasRole("USER")
                 .antMatchers("/admin").hasRole("ADMIN")
                 .antMatchers("/","/home","/index").permitAll()
